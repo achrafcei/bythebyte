@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div>
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>A personal corner of the internet</p>
+    <h1 id="hero-title">Small bytes.<br><em>Deeper thinking.</em></h1>
+    <p class="hero-description">Notes on code, ideas, and things worth figuring out. Written one byte at a time.</p>
+    <a class="text-link" href="{{ '/about/' | relative_url }}">A little about this space <span aria-hidden="true">&#8594;</span></a>
+  </div>
+  <div class="byte-art" aria-hidden="true">
+    <div class="art-caption"><span class="status-dot"></span> A WORK IN PROGRESS, ALWAYS</div>
+    <div class="byte-grid">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="art-footer"><span>01000010</span><span>IDEAS, IN BITS.</span></div>
+  </div>
+</section>
+
+<section class="writing-section" aria-labelledby="writing-title">
+  <div class="section-heading">
+    <h2 id="writing-title">Fresh off the keyboard<span class="accent">.</span></h2>
+    <a class="text-link" href="{{ '/archive/' | relative_url }}">All writing <span aria-hidden="true">&#8594;</span></a>
+  </div>
+  <div class="post-list">
+    {% for post in site.posts limit: 6 %}
+      {% include post-card.html post=post %}
+    {% else %}
+      <p class="empty-state">The first byte is on its way. Check back soon.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<aside class="subscribe-note">
+  <div>
+    <p class="eyebrow">Less noise. More signal.</p>
+    <h2>Keep a little curiosity in your feed.</h2>
+    <p>No algorithms, no inbox clutter. Just new posts in your RSS reader.</p>
+  </div>
+  <a class="button" href="{{ '/feed.xml' | relative_url }}">Follow via RSS <span aria-hidden="true">&#8599;</span></a>
+</aside>

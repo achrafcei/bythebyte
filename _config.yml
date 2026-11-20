@@ -1,0 +1,56 @@
+title: BytheByte
+tagline: Small bytes. Deeper thinking.
+description: "Notes on code, ideas, and things worth figuring out. A personal blog by achrafcei."
+url: "https://achrafcei.github.io"
+baseurl: "/bythebyte"
+repository: achrafcei/bythebyte
+github_url: "https://github.com/achrafcei"
+author:
+  name: achrafcei
+  url: "https://github.com/achrafcei"
+lang: en
+timezone: Etc/UTC
+
+permalink: /posts/:title/
+markdown: kramdown
+highlighter: rouge
+strict_front_matter: true
+future: false
+show_drafts: false
+unpublished: false
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+navigation:
+  - title: Writing
+    url: /
+  - title: Archive
+    url: /archive/
+  - title: About
+    url: /about/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - .ruby-version

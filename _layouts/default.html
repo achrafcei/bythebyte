@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f3">
+    {% seo %}
+    {% feed_meta %}
+    <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% if page.search %}
+      <script src="{{ '/assets/js/archive.js' | relative_url }}" defer></script>
+    {% endif %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | escape }} home">
+          <span class="brand-mark" aria-hidden="true">b<span>.</span></span>
+          {{ site.title | escape }}
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          {% for item in site.navigation %}
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title | escape }}</a>
+          {% endfor %}
+          <a class="rss-link" href="{{ '/feed.xml' | relative_url }}" aria-label="Subscribe via RSS">RSS <span aria-hidden="true">&#8599;</span></a>
+        </nav>
+      </header>
+      <main id="main" tabindex="-1">
+        {{ content }}
+      </main>
+      <footer class="site-footer">
+        <p><strong>{{ site.title | escape }}</strong><span class="footer-divider" aria-hidden="true">/</span>A little more curious, byte by byte.</p>
+        <div>
+          <a href="{{ site.github_url | escape }}">GitHub <span aria-hidden="true">&#8599;</span></a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS feed <span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

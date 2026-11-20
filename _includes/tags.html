@@ -1,0 +1,7 @@
+{% if include.tags.size > 0 %}
+  <div class="post-tags" aria-label="Tags">
+    {% for tag in include.tags %}
+      <a class="tag" href="{{ '/archive/' | relative_url }}?tag={{ tag | url_encode }}">{{ tag | escape }}</a>
+    {% endfor %}
+  </div>
+{% endif %}

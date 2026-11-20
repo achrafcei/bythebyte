@@ -1,0 +1,6 @@
+{% assign minutes = include.post.content | number_of_words | plus: 199 | divided_by: 200 | at_least: 1 %}
+<div class="post-meta">
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: "%b %-d, %Y" }}</time>
+  <span aria-hidden="true">&middot;</span>
+  <span>{{ minutes }} min read</span>
+</div>

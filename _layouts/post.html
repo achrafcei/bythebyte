@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="post">
+  <a class="back-link" href="{{ '/archive/' | relative_url }}">&#8592; All writing</a>
+  <header class="post-heading">
+    {% include post-meta.html post=page %}
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="page-description">{{ page.description | escape }}</p>{% endif %}
+    <p class="byline">By {{ site.author.name | escape }}</p>
+    {% include tags.html tags=page.tags %}
+  </header>
+  <div class="prose">{{ content }}</div>
+  <div class="post-end">
+    <span class="end-mark" aria-hidden="true">b.</span>
+    <p>Thanks for reading.<br><a href="{{ '/feed.xml' | relative_url }}">Follow the next byte via RSS &#8599;</a></p>
+  </div>
+  {% if page.previous or page.next %}
+    <nav class="post-navigation" aria-label="More posts">
+      {% if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}"><span class="eyebrow">Previous post</span>{{ page.previous.title | escape }} &#8592;</a>
+      {% endif %}
+      {% if page.next %}
+        <a href="{{ page.next.url | relative_url }}"><span class="eyebrow">Next post</span>{{ page.next.title | escape }} &#8594;</a>
+      {% endif %}
+    </nav>
+  {% endif %}
+</article>
