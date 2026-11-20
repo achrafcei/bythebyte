@@ -44,3 +44,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Confirm the published site is reachable
+        run: curl --fail --silent --show-error --retry 12 --retry-delay 5 --retry-all-errors --output /dev/null "$BLOG_URL"
+        env:
+          BLOG_URL: ${{ steps.deployment.outputs.page_url }}

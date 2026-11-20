@@ -106,6 +106,6 @@ Dependencies are recorded in `Gemfile.lock`. Update deliberately with `bundle up
 
 ## Hosting
 
-In **Settings > Pages**, the build source must be **GitHub Actions**. The workflow runs on pushes to `main` and can also be started manually. It uses GitHub's Pages deployment permissions; no personal access token or repository secret is required.
+In **Settings > Pages**, the build source must be **GitHub Actions**. The workflow runs on pushes to `main` and can also be started manually. After deployment, it checks that the public homepage is reachable. It uses GitHub's Pages deployment permissions; no personal access token or repository secret is required.
 
 RSS is available at [`/feed.xml`](https://achrafcei.github.io/bythebyte/feed.xml), and the sitemap at [`/sitemap.xml`](https://achrafcei.github.io/bythebyte/sitemap.xml).
